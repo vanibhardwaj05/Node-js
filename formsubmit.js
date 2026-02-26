@@ -11,8 +11,9 @@ app.use(express.urlencoded({extended:true}))
 app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname,"form.html"))
 })
-app.post("/submit",(req,res)=>{
-    const {name,email}=req.body
+// here for get method  we have to make 2 changes app.get and second body replce by query where for post app.post and query changes to body
+app.get("/submit",(req,res)=>{
+    const {name,email}=req.query
     let newUser = {name,email}
     let content = ''
     let readstream = fs.createReadStream("newdata.json","utf-8")
