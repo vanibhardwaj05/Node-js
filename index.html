@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real time character Counter</title>
+</head>
+<body>
+    <h2>Real time character Counter</h2>
+    <textarea  id="text" rows="6" cols="20"></textarea>
+    <p>characters: <span id="count">0</span></p>
+    <script>
+        let textarea=document.getElementById("text")
+        let count=document.getElementById("count")
+        textarea.addEventListener("input",function(){
+            count.textContent=textarea.value.length
+        })
+    </script>
+</body>
+</html>
+
